@@ -16,7 +16,6 @@ root.render(
                 alpha: true
             }}
 
-            // Orthographic
             camera={{
                 fov: 45,
                 near: 0.1,
