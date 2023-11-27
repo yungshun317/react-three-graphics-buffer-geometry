@@ -1,5 +1,5 @@
 import { OrbitControls } from "@react-three/drei";
-// import Particles from "./Particles";
+import Particles from "./Particles";
 
 const Scene = () => {
     return (
@@ -8,10 +8,12 @@ const Scene = () => {
             <axesHelper args={[3]} />
             <gridHelper args={[20, 20, 0xff0000, "cyan"]} />
 
-            <mesh>
+            <Particles />
+
+            { /* <mesh>
                 <boxGeometry />
                 <meshBasicMaterial color="orange" />
-            </mesh>
+            </mesh> */ }
         </>
     );
 };
