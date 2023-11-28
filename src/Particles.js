@@ -1,6 +1,6 @@
 import * as THREE from "three";
 import {useRef} from "react";
-import {useFrame} from "@react-three/fiber";
+import {useFrame, useLoader} from "@react-three/fiber";
 
 const Particles = () => {
     const particles = useRef();
@@ -10,6 +10,7 @@ const Particles = () => {
         particles.current.rotation.x += delta * 0.1;
     })
 
+    const texture = useLoader(THREE.TextureLoader, "./static/textures/snow.jpg");
     const verticesAmount = 2000;
     const positionArray = new Float32Array(verticesAmount * 3);
 
@@ -27,6 +28,12 @@ const Particles = () => {
                     array={positionArray}
                 />
             </bufferGeometry>
+            <pointsMaterial
+                size={0.06}
+                alphaMap={texture}
+                transparent
+                depthTest={false}
+            />
         </points>
     );
 
